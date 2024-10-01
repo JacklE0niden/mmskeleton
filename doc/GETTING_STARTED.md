@@ -7,6 +7,8 @@ a. [Optional] Create a [conda](www.anaconda.com/distribution/) virtual environme
 ``` shell
 conda create -n open-mmlab python=3.7 -y
 conda activate open-mmlab
+
+pip install -r requirements.txt
 ```
 
 b. Install PyTorch and torchvision (CUDA is required):

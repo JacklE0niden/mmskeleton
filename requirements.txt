@@ -1,4 +1,5 @@
-mmcv
+#必须先装
+mmcv==0.4.0
 torch>=1.1
 torchvision
 lazy_import

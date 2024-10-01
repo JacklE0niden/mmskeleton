@@ -6,6 +6,8 @@ import time
 
 from setuptools import find_packages, setup, Extension
 from setuptools.command.install import install
+from setuptools.extension import Extension
+
 
 import numpy as np
 from Cython.Build import cythonize  # noqa: E402
@@ -154,6 +156,7 @@ if __name__ == '__main__':
     if "--mmdet" in sys.argv:
         sys.argv.remove("--mmdet")
         install_requires += ['mmdet']
+        # print("install requirements:::", install_requires)
 
         import subprocess
         subprocess.check_call([sys.executable, "-m", "pip", "install", 'https://github.com/open-mmlab/mmdetection/archive/v1.0rc1.zip', '-v'])
@@ -187,6 +190,17 @@ if __name__ == '__main__':
             'https://github.com/open-mmlab/mmdetection/tarball/v1.0rc1/#egg=mmdet-v1.0rc1'
         ],
         install_requires=install_requires,
+        # ext_modules = cythonize([
+        #     Extension(
+        #         name='cpu_nms',
+        #         sources=['mmskeleton/ops/nms/cpu_nms.pyx']
+        #     ),
+        #     Extension(
+        #         name='gpu_nms',
+        #         sources=['mmskeleton/ops/nms/gpu_nms.pyx', 'mmskeleton/ops/nms/nms_kernel.cu'],
+        #         include_dirs=[np.get_include()]
+        #     )
+        # ]),
         ext_modules=[
             make_cython_ext(name='cpu_nms',
                             module='mmskeleton.ops.nms',
