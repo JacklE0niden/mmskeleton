@@ -1,0 +1,4 @@
+部署指南见doc
+已经做完了 1.GETTING_STARTED.md
+在做 2.SKELETON_DATA.md
+解压数据集的进程号 62203

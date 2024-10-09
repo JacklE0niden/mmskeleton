@@ -1,5 +1,8 @@
 #必须先装
 mmcv==0.4.0
-torch>=1.1
+torch
 torchvision
 lazy_import
+
+Pillow
+openmim
