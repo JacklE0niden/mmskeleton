@@ -76,6 +76,8 @@ def train(
         load_from=None,
 ):
 
+
+    print("model_cfg:", model_cfg)
     # calculate batch size
     if gpus < 0:
         gpus = torch.cuda.device_count()

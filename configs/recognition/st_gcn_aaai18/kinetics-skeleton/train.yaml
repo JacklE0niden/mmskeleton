@@ -59,17 +59,18 @@ processor_cfg:
   workflow: [['train', 5], ['val', 1]]
   work_dir: 
   log_level: 0
-  total_epochs: 50
+  total_epochs: 1000
   training_hooks:
     lr_config:
       policy: 'step'
-      step: [20, 30, 40, 50]
+      step: [200, 300, 400, 500, 600, 700, 800, 900]
     log_config:
       interval: 100
       hooks:
         - type: TextLoggerHook
     checkpoint_config:
-      interval: 5
+      interval: 200
     optimizer_config:
+      grad_clip: 
   resume_from:
   load_from:
