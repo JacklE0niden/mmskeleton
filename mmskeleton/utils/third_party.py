@@ -1,4 +1,6 @@
+import mmdet
 import lazy_import
+
 
 pycocotools = lazy_import.lazy_module("pycocotools")
 COCO = lazy_import.lazy_module("pycocotools.COCO")
