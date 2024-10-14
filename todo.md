@@ -21,7 +21,14 @@
 
   mmskl configs/recognition/st_gcn_aaai18/kinetics-skeleton/test.yaml --checkpoint ./work_dir/recognition/ST_GCN_18/kinetics-skeleton/epoch_400.pth
 
+  # Top1: 30.41%
+  # Top5: 51.75%
+
   mmskl configs/recognition/st_gcn_aaai18/kinetics-skeleton/test.yaml --checkpoint ./checkpoints/st_gcn.kinetics-6fa43f73.pth
+
+  # Top1: 31.58%
+  # Top5: 53.69%
+
   # 测试命令
 ```
 
@@ -29,7 +36,9 @@
 ## 将要执行的命令
 ```zsh
   mmskl configs/utils/build_dataset_example.yaml --gpus 4
+  # 不太搞得定
 ```
+- 把GCNs_for_human集成起来，形成一个框架，然后再弄一个能够处理狗骨架数据集的大模型，把数据标注好之后尝试做一下。
 
 ## 遇到的问题
 - **ImportError:** `mmskeleton.utils.third_party` 尝试使用需要模块 `mmdet.apis` 的功能，但无法加载。请安装 `mmdet` 并重试。
@@ -48,7 +57,8 @@
 
 ## 参考链接
 - [AS-GCN GitHub 仓库](https://github.com/limaosen0/AS-GCN/tree/master)
-
+- [2s-AGCN Github 仓库](https://github.com/lshiwjx/2s-AGCN/tree/master)
+- [CTR-GCN Github 仓库](https://github.com/Uason-Chen/CTR-GCN/tree/main)
 ## 版本对应
 - `torch==1.2.0`
 - `torchvision==0.4.0`
